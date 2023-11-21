@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/custom_error_widget.dart';
+import 'package:movie_app/core/utils/shimmer_widgets/popular_movie_shimmer.dart';
 import 'package:movie_app/movies/presentation/components/home_view/popular_movie_list_view.dart';
 import '../../controller/home_cubit/popular_cubit/movie_popular_bloc.dart';
 import '../../controller/home_cubit/popular_cubit/movie_popular_event.dart';
@@ -32,7 +33,7 @@ class PopularSection extends StatelessWidget {
             ),
           );
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const PopularMovieShimmer();
         }
       }),
     );
