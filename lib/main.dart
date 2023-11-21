@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/services/services_locator.dart';
-import 'package:movie_app/movies/presentation/views/home_movie/home_movie.dart';
+import 'package:movie_app/movies/presentation/views/home_movie.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   ServicesLocator().initServiceLocator();
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
+      ).copyWith(
+        textTheme: GoogleFonts.alexandriaTextTheme(ThemeData.dark().textTheme),
       ),
       debugShowCheckedModeBanner: false,
       home: const HomeMovie(),
