@@ -13,24 +13,27 @@ class PopularMovieShimmer extends StatelessWidget {
       enabled: true,
       child: SizedBox(
         height: MediaQuery.of(context).size.height / 5.2,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 4,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 5.0),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width / 3.6,
-                height: MediaQuery.of(context).size.height / 5.2,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.white60,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 4,
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.only(right: 5.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width / 3.6,
+                  height: MediaQuery.of(context).size.height / 5.2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.white60,
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
