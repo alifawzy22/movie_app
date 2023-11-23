@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/movies/domain/usecases/get_popular_movies_use_case.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/popular_cubit/movie_popular_event.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/popular_cubit/movie_popular_state.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/popular_bloc/movie_popular_event.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/popular_bloc/movie_popular_state.dart';
 
 import '../../../../../core/utils/services/services_locator.dart';
 

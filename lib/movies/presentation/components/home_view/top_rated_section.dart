@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/custom_error_widget.dart';
 import 'package:movie_app/core/utils/shimmer_widgets/popular_movie_shimmer.dart';
 import 'package:movie_app/movies/presentation/components/home_view/top_rated_movie_list_view.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/top_rated_cubit/movie_top_rated_bloc.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/top_rated_cubit/movie_top_rated_event.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/top_rated_cubit/movie_top_rated_state.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/top_rated_bloc/movie_top_rated_bloc.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/top_rated_bloc/movie_top_rated_event.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/top_rated_bloc/movie_top_rated_state.dart';
 
 class TopRatedSection extends StatelessWidget {
   const TopRatedSection({super.key});

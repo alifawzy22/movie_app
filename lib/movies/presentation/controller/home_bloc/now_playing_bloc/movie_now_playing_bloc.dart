@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/now_playing_cubit/movie_now_playing_event.dart';
-import 'package:movie_app/movies/presentation/controller/home_cubit/now_playing_cubit/movie_now_playing_state.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/now_playing_bloc/movie_now_playing_event.dart';
+import 'package:movie_app/movies/presentation/controller/home_bloc/now_playing_bloc/movie_now_playing_state.dart';
 
 import '../../../../../core/utils/services/services_locator.dart';
 import '../../../../domain/usecases/get_now_playing_movies_use_case.dart';
