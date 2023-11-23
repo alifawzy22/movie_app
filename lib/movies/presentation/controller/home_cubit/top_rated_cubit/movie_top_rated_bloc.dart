@@ -15,7 +15,7 @@ class MovieTopRatedBloc extends Bloc<MovieTopRatedEvents, MovieTopRatedStates> {
     } else if (event is MovieTopRatedFailureEvent) {
       emit(MovieTopRatedFailureState(errorMessage: event.errorMessage));
     } else {
-      final result = await (sl<GetTopRatedMoviesUseCase>()).execute();
+      final result = await (sl<GetTopRatedMoviesUseCase>())();
       result.fold(
           (failure) => emit(
               MovieTopRatedFailureState(errorMessage: failure.errorMessage)),
