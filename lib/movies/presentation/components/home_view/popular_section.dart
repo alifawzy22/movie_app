@@ -27,7 +27,7 @@ class PopularSection extends StatelessWidget {
         } else if (state is MoviePopularFailureState) {
           return SizedBox(
             height: MediaQuery.of(context).size.height / 5.2,
-            width: MediaQuery.of(context).size.width / 3.6,
+            width: MediaQuery.of(context).size.width,
             child: Center(
               child: CustomErrorWidget(errMessage: state.errorMessage),
             ),

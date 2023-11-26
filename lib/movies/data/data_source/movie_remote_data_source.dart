@@ -16,6 +16,7 @@ class MovieRemoteDataSource implements BaseMovieRemoteDataSource {
     final Response response;
     try {
       response = await Dio().get(ApiConstance.nowPlayingMoviePath);
+
       return right(
         (response.data['results'] as List)
             .map(

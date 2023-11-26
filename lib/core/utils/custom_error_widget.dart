@@ -11,6 +11,7 @@ class CustomErrorWidget extends StatelessWidget {
       errMessage,
       style: Styles.textStyle24,
       textAlign: TextAlign.center,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }
