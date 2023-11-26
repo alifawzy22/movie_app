@@ -17,7 +17,8 @@ class MovieNowPlayingBloc
     } else if (event is MovieNowPlayingFailureEvent) {
       emit(MovieNowPlayingFailureState(errorMessage: event.errorMessage));
     } else {
-      final result = await (sl<GetNowPlayingMoviesUseCase>())();
+      final result = await (sl<GetNowPlayingMoviesUseCase>())(
+          NowPlayingMoviesUseCaseNoParamters());
       result.fold(
           (failure) => emit(
               MovieNowPlayingFailureState(errorMessage: failure.errorMessage)),

@@ -16,7 +16,8 @@ class MoviePopularBloc extends Bloc<MoviePopularEvents, MoviePopularStates> {
     } else if (event is MoviePopularFailureEvent) {
       emit(MoviePopularFailureState(errorMessage: event.errorMessage));
     } else {
-      final result = await (sl<GetPopularMoviesUseCase>())();
+      final result = await (sl<GetPopularMoviesUseCase>())(
+          PopularMoviesUseCaseNoParameters());
       result.fold(
           (failure) => emit(
               MoviePopularFailureState(errorMessage: failure.errorMessage)),
