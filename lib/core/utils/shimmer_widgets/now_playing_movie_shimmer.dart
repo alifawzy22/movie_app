@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class NowPlayingMovieShimmer extends StatelessWidget {
-  const NowPlayingMovieShimmer({super.key});
+  final double? height;
+  const NowPlayingMovieShimmer({super.key, this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class NowPlayingMovieShimmer extends StatelessWidget {
       enabled: true,
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: height ?? MediaQuery.of(context).size.height * 0.4,
         child: Container(
           color: Colors.white60,
         ),
