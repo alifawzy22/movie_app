@@ -26,12 +26,10 @@ class TopRatedSection extends StatelessWidget {
             ),
           );
         } else if (state is MovieTopRatedFailureState) {
-          return SizedBox(
+          return CustomErrorWidget(
+            errMessage: state.errorMessage,
             height: MediaQuery.of(context).size.height / 5.2,
             width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: CustomErrorWidget(errMessage: state.errorMessage),
-            ),
           );
         } else {
           return const PopularMovieShimmer();

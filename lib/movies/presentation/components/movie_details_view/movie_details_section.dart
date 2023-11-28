@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/app_constance.dart';
 import 'package:movie_app/core/utils/custom_error_widget.dart';
 import 'package:movie_app/core/utils/network/api_constance.dart';
+import 'package:movie_app/core/utils/shimmer_widgets/movie_details_shimmer.dart';
 import 'package:movie_app/core/utils/shimmer_widgets/now_playing_movie_shimmer.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/movies/domain/usecases/get_details_movie_use_case.dart';
@@ -29,12 +30,10 @@ class MovieDetailsSection extends StatelessWidget {
       child: BlocBuilder<MovieDetailsBloc, MovieDetailsState>(
         builder: (context, state) {
           if (state is MovieDetailsFailureState) {
-            return SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
+            return CustomErrorWidget(
+              errMessage: state.errorMessage,
+              height: MediaQuery.of(context).size.height * 0.60,
               width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: CustomErrorWidget(errMessage: state.errorMessage),
-              ),
             );
           } else if (state is MovieDetailsSuccessState) {
             return Column(
@@ -138,7 +137,7 @@ class MovieDetailsSection extends StatelessWidget {
               ],
             );
           } else {
-            return const NowPlayingMovieShimmer();
+            return const MovieDetailsShimmer();
           }
         },
       ),

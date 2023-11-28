@@ -4,7 +4,7 @@ import 'package:movie_app/core/utils/app_constance.dart';
 import 'package:movie_app/core/utils/network/api_constance.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/movies/domain/entities/movie.dart';
-import 'package:movie_app/movies/presentation/views/details_movie.dart';
+import 'package:movie_app/movies/presentation/views/movie_details_view.dart';
 
 class NowPlayingMovieItem extends StatelessWidget {
   final Movie movie;
@@ -19,7 +19,7 @@ class NowPlayingMovieItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => DetailsMovie(
+            builder: (context) => MovieDetailsView(
               movieId: movie.id,
             ),
           ),

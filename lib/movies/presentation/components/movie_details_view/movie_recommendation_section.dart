@@ -25,12 +25,10 @@ class MovieRecommendationSection extends StatelessWidget {
       child: BlocBuilder<MovieRecommendationBloc, MovieRecommendationState>(
         builder: (context, state) {
           if (state is MovieRecommendationFailureState) {
-            return SizedBox(
+            return CustomErrorWidget(
+              errMessage: state.errorMessage,
               height: MediaQuery.of(context).size.height * 0.4,
               width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: CustomErrorWidget(errMessage: state.errorMessage),
-              ),
             );
           } else if (state is MovieRecommendationSuccessState) {
             return Padding(

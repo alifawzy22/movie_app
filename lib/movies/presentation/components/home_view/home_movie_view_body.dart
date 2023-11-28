@@ -4,8 +4,8 @@ import 'package:movie_app/movies/presentation/components/home_view/now_playing_s
 import 'package:movie_app/movies/presentation/components/home_view/popular_section.dart';
 import 'package:movie_app/movies/presentation/components/home_view/top_rated_section.dart';
 
-class HomeMovieBody extends StatelessWidget {
-  const HomeMovieBody({
+class HomeMovieViewBody extends StatelessWidget {
+  const HomeMovieViewBody({
     super.key,
   });
 

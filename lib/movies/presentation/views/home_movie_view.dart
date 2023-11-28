@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/movies/presentation/components/home_view/home_view_body.dart';
+import 'package:movie_app/movies/presentation/components/home_view/home_movie_view_body.dart';
 
-class HomeMovie extends StatelessWidget {
-  const HomeMovie({super.key});
+class HomeMovieView extends StatelessWidget {
+  const HomeMovieView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HomeMovie extends StatelessWidget {
         shrinkWrap: true,
         slivers: [
           SliverFillRemaining(
-            child: HomeMovieBody(),
+            child: HomeMovieViewBody(),
           )
         ],
       ),

@@ -25,12 +25,10 @@ class NowPlayingSection extends StatelessWidget {
               child: NowPlayingMovieListView(movies: state.movies),
             );
           } else if (state is MovieNowPlayingFailureState) {
-            return SizedBox(
+            return CustomErrorWidget(
+              errMessage: state.errorMessage,
               height: MediaQuery.of(context).size.height * 0.4,
               width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: CustomErrorWidget(errMessage: state.errorMessage),
-              ),
             );
           } else {
             return const NowPlayingMovieShimmer();
