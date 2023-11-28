@@ -5,7 +5,6 @@ import 'package:movie_app/core/utils/app_constance.dart';
 import 'package:movie_app/core/utils/custom_error_widget.dart';
 import 'package:movie_app/core/utils/network/api_constance.dart';
 import 'package:movie_app/core/utils/shimmer_widgets/movie_details_shimmer.dart';
-import 'package:movie_app/core/utils/shimmer_widgets/now_playing_movie_shimmer.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/movies/domain/usecases/get_details_movie_use_case.dart';
 import 'package:movie_app/movies/presentation/controller/details_bloc/movie_details_bloc.dart';
