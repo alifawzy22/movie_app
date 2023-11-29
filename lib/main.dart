@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-      ).copyWith(
         textTheme: GoogleFonts.alexandriaTextTheme(ThemeData.dark().textTheme),
       ),
       debugShowCheckedModeBanner: false,
