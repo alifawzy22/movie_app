@@ -1,7 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/utils/app_constance.dart';
+import 'package:movie_app/core/utils/custom_cached_network_image.dart';
 import 'package:movie_app/core/utils/custom_error_widget.dart';
 import 'package:movie_app/core/utils/network/api_constance.dart';
 import 'package:movie_app/core/utils/shimmer_widgets/popular_movie_shimmer.dart';
@@ -48,19 +47,10 @@ class MovieRecommendationSection extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: CachedNetworkImage(
-                      imageUrl: ApiConstance.imageUrl(
+                    child: CustomNetworkImage(
+                      backdropPath: ApiConstance.imageUrl(
                         path: state.movieRecommendations[index].backdropPath,
                       ),
-                      errorWidget: (context, url, error) => Image.asset(
-                        AppConstance.noImage,
-                        fit: BoxFit.fill,
-                      ),
-                      placeholder: (context, url) => Image.asset(
-                        AppConstance.imageLoading,
-                      ),
-                      fit: BoxFit.fill,
-                      fadeInDuration: const Duration(milliseconds: 500),
                     ),
                   );
                 },

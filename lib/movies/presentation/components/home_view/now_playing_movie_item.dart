@@ -1,6 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/utils/app_constance.dart';
+import 'package:movie_app/core/utils/custom_cached_network_image.dart';
 import 'package:movie_app/core/utils/network/api_constance.dart';
 import 'package:movie_app/core/utils/styles.dart';
 import 'package:movie_app/movies/domain/entities/movie.dart';
@@ -28,20 +27,11 @@ class NowPlayingMovieItem extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          CachedNetworkImage(
-            imageUrl: ApiConstance.imageUrl(
+          CustomNetworkImage(
+            backdropPath: ApiConstance.imageUrl(
               path: movie.backdropPath,
             ),
-            errorWidget: (context, url, error) => Image.asset(
-              AppConstance.noImage,
-              fit: BoxFit.fill,
-            ),
-            placeholder: (context, url) => Image.asset(
-              AppConstance.imageLoading,
-            ),
-            fit: BoxFit.fill,
             height: MediaQuery.of(context).size.height * 0.4,
-            fadeInDuration: const Duration(milliseconds: 500),
           ),
           Positioned(
             bottom: 50,
