@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/utils/custom_cached_network_image.dart';
 import 'package:movie_app/core/utils/custom_error_widget.dart';
-import 'package:movie_app/core/utils/network/api_constance.dart';
 import 'package:movie_app/core/utils/shimmer_widgets/popular_movie_shimmer.dart';
 import 'package:movie_app/movies/domain/usecases/get_movie_recommendation_use_case.dart';
+import 'package:movie_app/movies/presentation/components/movie_details_view/movie_recommendations_success_body.dart';
 import 'package:movie_app/movies/presentation/controller/recommendation_bloc/recommendation_bloc.dart';
 import 'package:movie_app/movies/presentation/controller/recommendation_bloc/recommendation_event.dart';
 import 'package:movie_app/movies/presentation/controller/recommendation_bloc/recommendation_state.dart';
@@ -30,31 +29,8 @@ class MovieRecommendationSection extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
             );
           } else if (state is MovieRecommendationSuccessState) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 16.0, top: 8, right: 16.0),
-              child: GridView.builder(
-                padding: EdgeInsets.zero,
-                physics: const NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  childAspectRatio: 2 / 3,
-                  crossAxisSpacing: 6,
-                  mainAxisSpacing: 5,
-                ),
-                itemCount: state.movieRecommendations.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: CustomNetworkImage(
-                      backdropPath: ApiConstance.imageUrl(
-                        path: state.movieRecommendations[index].backdropPath,
-                      ),
-                    ),
-                  );
-                },
-              ),
+            return MovieRecommendationSuccessBody(
+              movieRecommendations: state.movieRecommendations,
             );
           } else {
             return const Column(

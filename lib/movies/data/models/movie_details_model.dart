@@ -4,7 +4,7 @@ import 'package:movie_app/movies/domain/entities/movie_details.dart';
 class MovieDetailsModel extends MovieDetails {
   const MovieDetailsModel({
     required super.id,
-    required super.backdropPath,
+    super.backdropPath,
     required super.title,
     required super.releaseDate,
     required super.voteAverage,
@@ -16,7 +16,7 @@ class MovieDetailsModel extends MovieDetails {
   factory MovieDetailsModel.fromJson(Map<String, dynamic> json) =>
       MovieDetailsModel(
         id: json['id'],
-        backdropPath: json['backdrop_path'],
+        backdropPath: json['backdrop_path'] ?? '',
         title: json['title'],
         releaseDate: json['release_date'],
         voteAverage: json['vote_average'],
